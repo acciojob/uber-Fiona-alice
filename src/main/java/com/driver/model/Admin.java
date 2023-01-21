@@ -14,11 +14,11 @@ public  class Admin {
     private String userName;
     private String password;
 
-    public Admin(int id, String userName, String password) {
+    /*public Admin(int id, String userName, String password) {
         this.adminId = adminId;
         this.userName = userName;
         this.password = password;
-    }
+    }*/
 
     public int getId() {
         return adminId;

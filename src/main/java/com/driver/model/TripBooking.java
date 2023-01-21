@@ -26,12 +26,12 @@ public class TripBooking {
     @JoinColumn
     Driver driver;
 
-    public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm) {
+    /*public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm) {
         this.tripBookingId = tripBookingId;
         this.fromLocation = fromLocation;
         this.toLocation = toLocation;
         this.distanceInKm = distanceInKm;
-    }
+    }*/
 
     public int getTripBookingId() {
         return tripBookingId;

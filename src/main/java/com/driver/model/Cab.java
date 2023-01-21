@@ -9,17 +9,17 @@ public class Cab {
     private int id;
 
     private int perKmRate;
-    private boolean available;
+    private Boolean available;
 
     @OneToOne
     @JoinColumn
     Driver driver;
 
-    public Cab(int id, int perKmRate, boolean available) {
+   /* public Cab(int id, int perKmRate, boolean available) {
         this.id = id;
         this.perKmRate = perKmRate;
         this.available = available;
-    }
+    }*/
 
     public int getId() {
         return id;
@@ -37,10 +37,6 @@ public class Cab {
         this.perKmRate = perKmRate;
     }
 
-    public boolean isAvailable() {
-        return available;
-    }
-
     public void setAvailable(boolean available) {
         this.available = available;
     }
@@ -51,5 +47,13 @@ public class Cab {
 
     public void setDriver(Driver driver) {
         this.driver = driver;
+    }
+
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 }

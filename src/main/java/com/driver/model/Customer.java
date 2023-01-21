@@ -17,11 +17,11 @@ public class Customer {
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
 
-    public Customer(int customerId, String mobile, String password) {
+   /* public Customer(int customerId, String mobile, String password) {
         this.customerId = customerId;
         this.mobile = mobile;
         this.password = password;
-    }
+    }*/
 
     public int getCustomerId() {
         return customerId;
