@@ -1,9 +1,8 @@
 package com.driver.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Cab {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -11,6 +10,10 @@ public class Cab {
 
     private int perKmRate;
     private boolean available;
+
+    @OneToOne
+    @JoinColumn
+    Driver driver;
 
     public Cab(int id, int perKmRate, boolean available) {
         this.id = id;
@@ -40,5 +43,13 @@ public class Cab {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
     }
 }

@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
 public class TripBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,10 +15,16 @@ public class TripBooking {
     private int distanceInKm;
     private int bill;
 
-    @Enumerated
+    @Enumerated(value = EnumType.STRING)
     private TripStatus status;
 
-    private List<TripBooking> tripBookingList = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn
+    Customer customer;
+
+    @ManyToOne
+    @JoinColumn
+    Driver driver;
 
     public TripBooking(int tripBookingId, String fromLocation, String toLocation, int distanceInKm) {
         this.tripBookingId = tripBookingId;
@@ -60,6 +65,35 @@ public class TripBooking {
         this.distanceInKm = distanceInKm;
     }
 
-    @OneToMany
+    public Customer getCustomer() {
+        return customer;
+    }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
+
+    public int getBill() {
+        return bill;
+    }
+
+    public void setBill(int bill) {
+        this.bill = bill;
+    }
+
+    public TripStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TripStatus status) {
+        this.status = status;
+    }
 }
